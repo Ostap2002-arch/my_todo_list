@@ -33,6 +33,7 @@ def create_and_show_tasks(request, slug_categories):
         user = request.user
         category = Сategories.objects.filter(owner=request.user, slug_categories = slug_categories)
         list_tasks_categories = Works.objects.filter(owner = user)
+        "Тестовая попытка"
     except Exception as s:
         print(s)
 
