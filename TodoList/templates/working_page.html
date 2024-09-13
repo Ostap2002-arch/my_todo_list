@@ -1,0 +1,230 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Рабочая страница</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href = "{% static 'css/working_page.css' %}" rel = "stylesheet">
+    <script src="https://kit.fontawesome.com/480d9787b7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+      {% block add_link %}
+      {% endblock %}
+  </head>
+ 
+<body>
+    <header>
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class = "col-xl-3 col-sm-4 col-6 ">
+                    <div class = "logo d-inline">
+                        <i class="fa-solid fa-pen-to-square"></i> 
+                    </div>
+                    <div class = "name_logo d-inline">ToDo</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+ 
+
+
+
+ 
+
+<!-- Offcanvas user-->
+<div class="offcanvas offcanvas-start offcanvas_user" tabindex="-1" id="offcanvas_user" aria-labelledby="offcanvas_user">
+  <div class="offcanvas-header">
+    <div class = "photo_user d-inline">UN</div>
+    <h5 class="offcanvas-title" id="offcanvas_user">UserName</h5>
+    <button type="button"  class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_user"></button>
+    <!-- Button offcanvas user-->
+        <button class="btn btn-primary button_canvas_user " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_user" aria-controls="offcanvasExample">
+        <i class="bi bi-person"></i>
+      </button>
+      <!-- END Button offcanvas user-->  
+  </div>
+  <hr class = "d-block my-0 mx-2 hr_offcanvas">
+  <div class="offcanvas-body">
+    <div class = "div_organizer d-inline-block">
+            <div class = "d-inline-block organizer">
+                
+                <div class = "elem_organizer d-block my-1">
+                    <i class="bi bi-plus-circle"></i> Добавить задачу
+                </div>
+                <div class = "elem_organizer d-block my-1">
+                    <i class="bi bi-calendar-check"></i> Календарь
+                </div>
+            </div>
+    </div>
+  </div>
+</div>
+<!-- ENd Offcanvas user-->
+
+<!-- Offcanvas tasks-->
+<div class="offcanvas offcanvas-start offcanvas_tasks" tabindex="-1" id="offcanvas_tasks" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <div class = "photo_user d-inline">UN</div>
+    <h5 class="offcanvas-title" id="offcanvas_tasks">UserName</h5>
+    <button type="button"  class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_tasks"></button>
+    <!-- Button offcanvas tasks-->   
+      <button class="btn btn-primary button_canvas_tasks" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_tasks" aria-controls="offcanvasExample">
+        <i class="bi bi-calendar-check"></i>
+      </button>
+      <!-- END Button offcanvas tasks-->   
+  </div>
+  <hr class = "hr_offcanvas d-block my-0 mx-2">
+  <div class="offcanvas-body">
+    <div class = "div_organizer d-inline-block">
+            <div class = "d-inline-block organizer">
+                
+                <div class = "elem_organizer d-block my-1">
+                    <i class="bi bi-plus-circle"></i> Мой профиль
+                </div>
+                <div class = "elem_organizer d-block my-1">
+                    <i class="bi bi-calendar-check"></i> Контакты
+                </div>
+                <div class = "elem_organizer d-block my-1">
+                    <i class="bi bi-gear"></i> Настройки
+                </div>
+            </div>
+    </div>
+  </div>
+</div>
+<!-- ENd Offcanvas tasks-->
+
+<!-- Offcanvas team-->
+<div class="offcanvas offcanvas-start offcanvas_team" tabindex="-1" id="offcanvas_team" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <div class = "photo_user d-inline">UN</div>
+    <h5 class="offcanvas-title" id="offcanvas_team">UserName</h5>
+    <button type="button"  class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"></button>
+    <!-- Button offcanvas team-->   
+      <button class="btn btn-primary button_canvas_team" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_team" aria-controls="offcanvasExample">
+    <i class="bi bi-people"></i>
+      </button>
+    <!-- END Button offcanvas team-->  
+  </div>
+  <hr class = "d-block my-0 mx-2 hr_offcanvas">
+  <div class="offcanvas-body">
+    <div class = "div_organizer d-inline-block">
+            <div class = "d-inline-block organizer">
+                
+                <div class = "elem_organizer d-block my-1">
+                    <i class="bi bi-plus-circle"></i> Добавить проект
+                </div>
+                <div class = "elem_organizer d-block my-1">
+                    <i class="bi bi-calendar-check"></i> Календарь проектов
+                </div>
+                <div class = "elem_organizer d-block my-1">
+                    <i class="bi bi-gear"></i> Сотрудники
+                </div>
+            </div>
+    </div>
+  </div>
+</div>
+<!-- ENd Offcanvas team-->
+    
+<!-- BASE -->  
+    
+<div class = "container px-3 h-100">
+    <div class = "row justify-content-center h-100">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+    
+<!-- Модальное окно -->
+<form class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
+    <div class="modal-content h-100">
+      <div class="modal-header bg_gray">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body container-fluid">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1 " class="form-label fonts_modal">Название задачи</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" value="Задача №1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label fonts_modal">Описание</label>
+                <textarea type="text" class="form-control" id="exampleFormControlInput1" value = "">Тут будет описание оооооооооооооооооооооооооооооочччччччччччччччеееееееееееннннннннннннньььььььь /n длинноое описаниеe2qrw4te5yru6t
+                wesrdtyfjuk
+                DAWFSGERDHTJ
+                AWSEGDRHFT</textarea>
+            </div>
+            <div class = "mb-2 fonts_modal">Приоритетность</div>
+            <div class = "d-flex flex-nowrap justify-content-around mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input form-check-input1" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1"><i class="bi bi-flag-fill priority1"></i></label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input form-check-input2" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio2"><i class="bi bi-flag-fill priority2"></i></label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input form-check-input3" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" checked>
+                  <label class="form-check-label" for="inlineRadio3"><i class="bi bi-flag-fill priority3"></i></label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input form-check-input4" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
+                  <label class="form-check-label" for="inlineRadio4"><i class="bi bi-flag-fill priority4"></i></label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="formFileMultiple" class="form-label mb-2 fonts_modal">Дополнительно</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- END_BASE -->  
+
+<!-- Footer -->
+<footer>
+    <div class = "footer">
+        <div class = "d-inline-block">© ToDo.ru 2024</div>
+    </div>
+</footer>
+      
+<!-- END footer --> 
+    
+<!-- SVG -->
+    <svg width = "0" height = "0">
+        <clipPath id = "bookmark" clipPathUnits = "objectBoundingBox">
+            <path d = "M0.949,0.032 c0.041,0,0.075,0.086,0.075,0.191 v0.617 c0,0.105,-0.034,0.191,-0.075,0.191 h-0.63 c-0.041,0,-0.1,-0.055,-0.132,-0.123 c0,0,-0.076,-0.162,-0.142,-0.304 C0.033,0.581,0.033,0.581,0.033,0.581 c-0.013,-0.027,-0.014,-0.068,-0.003,-0.091 c0,0,0,0,0.015,-0.032 c0.018,-0.038,0.068,-0.145,0.113,-0.242 c0.043,-0.091,0.043,-0.091,0.043,-0.091 C0.225,0.073,0.278,0.032,0.319,0.032 H0.949"></path>
+        </clipPath>
+    </svg>
+    <svg width = "0" height = "0">
+        <clipPath id = "marker" clipPathUnits = "objectBoundingBox">
+            <path d = "M1,0.997 c-0.006,-0.053,-0.013,-0.104,-0.023,-0.154 c-0.002,-0.012,-0.005,-0.024,-0.005,-0.037 c-0.001,-0.018,0.003,-0.035,0.006,-0.051 c0.009,-0.039,0.022,-0.077,0.024,-0.12 c0.001,-0.021,-0.001,-0.042,-0.004,-0.062 c-0.003,-0.024,-0.005,-0.049,-0.008,-0.073 c-0.002,-0.019,-0.004,-0.038,-0.007,-0.056 c-0.002,-0.013,-0.006,-0.025,-0.008,-0.038 c-0.007,-0.042,0,-0.089,0.009,-0.129 s0.021,-0.078,0.025,-0.122 c0.005,-0.053,-0.001,-0.111,-0.018,-0.153 l-0.972,0.005 C0.048,0.033,0.056,0.062,0.055,0.092 C0.053,0.131,0.037,0.162,0.034,0.201 C0.031,0.23,0.036,0.259,0.042,0.285 s0.014,0.05,0.02,0.077 c0.004,0.022,0.007,0.045,0.009,0.068 c0.005,0.056,0.008,0.116,0,0.171 c-0.004,0.027,-0.011,0.053,-0.017,0.078 c-0.015,0.064,-0.024,0.141,-0.011,0.207 c0.004,0.019,0.009,0.036,0.013,0.055 c0.004,0.019,0.005,0.041,0.001,0.06 L1,0.997"></path>
+        </clipPath>
+    </svg>
+
+<!-- END_SVG -->
+    
+<!-- SCRIPTS -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src = "{% static 'js/myjs.js' %}"></script>
+    <script src="{% static 'js/jquery-3.7.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/jQuery.vbgp.js' %}"></script>
+    {% block add_scripts %}
+    {% endblock %}
+
+<!-- END_SCRIPTS -->
+</body>

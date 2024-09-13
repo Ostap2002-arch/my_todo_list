@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Демо Bootstrap</title>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href = "../assets/css/index.css" rel = "stylesheet">
+    <script src="https://kit.fontawesome.com/480d9787b7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      
+    <!-- Header -->
+    <header>
+        <div class="container ">
+            <div class="row d-flex justify-content-between">
+                <div class = "col-xl-3 col-sm-4 col-6 ">
+                    <div class = "logo d-inline">
+                        <i class="fa-solid fa-pen-to-square"></i> 
+                    </div>
+                    <div class = "name_logo d-inline">ToDo</div>
+                </div>
+                <nav class = "header_nav col-xl-8 col-sm-8 col-6  d-flex justify-content-end align-items-center">
+                    <div class = "d-md-inline-block d-none"><a class = "menu_item text-nowrap my-auto" href = "#">Возможности</a></div>
+                    <div class = "d-md-inline-block d-none"><a class = "menu_item  m-auto text-nowrap" href = "#">Для команд</a></div>
+                    <div class = "d-md-inline-block d-none"><a class = "menu_item text-nowrap" href = "#">Тарифы</a></div>
+                    <div class = "d-md-inline-block d-none text-nowrap"><a class = "menu_item text-nowrap" href = "#"><i class="fa-solid fa-user"></i><p class = "enter_menu">Вход</p></a></div>
+                    <bottom class = "d-md-none d-inline-block border-0 burger_menu" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa-solid fa-bars"></i></bottom>
+                </nav>  
+            </div>
+            <hr>
+        </div>
+    </header>
+    <!-- End header -->
+      
+      
+    <!-- Collaps -->
+    <div class = "collaps collapse" id="collapseExample">
+    <div class = "container">
+      <div class="row d-flex justify-content-end">
+             <div class = "col-sm-5 col-7 wrapper">
+                    <div class="collapse_menu" >
+                        <div class = "item_collaps d-block"><a class = "menu_item d-block text-nowrap item_scroll" href = "#">Мой список</a></div>
+                        <div class = "item_collaps d-block"><a class = "menu_item d-block text-nowrap item_scroll" href = "#">Календарь</a></div>
+                        <div class = "item_collaps d-block"><a class = "menu_item d-block text-nowrap item_scroll" href = "#">Задачи</a></div>
+                        <div class = "item_collaps d-block"><a class = "menu_item d-block item_scroll" href = "#">Вход</a></div>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- ENd collaps -->
+      
+      
+    <!-- login -->
+    <div class = "mt-5">
+    <div class = "container">
+        <div class = "row d-flex justify-content-center">
+            <div class = "col-10 col-sm-8 col-md-5 col-xl-4 border border-black rounded-2 p-2">
+                <form>
+                <div class = "mb-3">
+                    <label for="login1" class="form-label login_reg">Логин</label>
+                    <input type="text" class="form-control" id="login1" placeholder="Телефон или почта">
+                </div>
+                <div class = "mb-3">
+                    <label for="login1" class="form-label login_reg">Пароль</label>
+                    <input type="password" class="form-control mb-1" id="login1" placeholder="Password">
+                    <a href = "#" class = "ms-1 help_password">Забыли пароль?</a>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="remember" checked>
+                    <label class="form-check-label" for="remember">
+                        Запомнить меня
+                    </label>
+                </div>
+                <div class = "d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn btn-dark enter_btn"><p class = "enter">Вход</p></button>
+                </div>
+                </form>
+                <hr>
+                <div class = "d-grid gap-2 col-6 mx-auto">
+                    <a class="btn btn-outline-dark enter_btn" href="#" role="button"><p class = "enter">Регистрация</p></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+      
+    <!-- ENd login -->
+      
+    <!-- Footer -->
+    <footer>
+        <div class = "footer">
+            <div class = "d-inline-block">© ToDo.ru 2024</div>
+        </div>
+    </footer>
+      
+    <!-- END footer -->
+    
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+      
+    <script src="../assets/js/jquery-3.7.1.slim.min.js"></script>
+    <script src="../assets/js/jQuery.vbgp.js"></script>
+  </body>
+</html>

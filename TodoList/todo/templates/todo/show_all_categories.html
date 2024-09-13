@@ -1,0 +1,47 @@
+{% extends 'working_page.html' %}
+{% block add_link %}
+{% load static %}
+<link href="{% static 'css/create_categories.css' %}" rel="stylesheet">
+<link href="{% static 'css/all_show_categories.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class = "row w-100 py-1 gx-2 d1">
+    <div class="col-12 col-lg-6 h-auto d2 h-100 px-3 all_categories_content" >
+        <div class = "h-100 w-100 right_info py-3">
+            <div class = "d-flex justify-content-center mb-3">
+                <div class="title_left text-center">Мои категории</div>
+            </div>
+
+            {% for cat in categories %}
+                <div class = 'w-100 p-3'>
+                    <a class="d-block w-100 category_a" href = '#' role = 'button' >
+                            <div class="w-100 category_user"
+                                 style="background: rgba({{ cat.color.rgba }}, 0.2);"
+                                 onmouseover="this.style.backgroundColor='rgba({{ cat.color.rgba }}, 0.4)';"
+                                 onmouseout="this.style.backgroundColor='rgba({{ cat.color.rgba }}, 0.2)';"
+                                 >
+                                <p class="position-center text-center my-2 mb-1 text_category">{{cat.title}}</p>
+                                <p class="text-end me-2 mb-2 text_roboto">Задач: 0</p>
+                            </div>
+                    </a>
+                </div>
+            {% endfor %}
+                <div class = 'w-100 p-3'>
+                    <a class="d-block w-100 category_a" href = "{% url  'create_categories' %}" role = 'button' >
+                            <div class="w-100 category_user all_categories">
+                                <p class="position-center text-center my-2 mb-1 text_category">
+                                    <i class="bi bi-plus-circle me-3"></i>Создать категорию</p>
+                            </div>
+                    </a>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block add_scripts %}
+{% load static %}
+{% endblock %}

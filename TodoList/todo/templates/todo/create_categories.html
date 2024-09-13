@@ -1,0 +1,77 @@
+{% extends 'working_page.html' %}
+{% block add_link %}
+{% load static %}
+<link href="{% static 'css/create_categories.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class = "row w-100 py-1 gx-2 d1">
+    <div class="col-12 col-lg-6 d2 h-100 px-3" >
+        <div class = "h-100 w - 100 p-3 left_form">
+            <form method="post">
+            <div class = 'd-block'>
+                {% csrf_token %}
+            <div class = "d-flex justify-content-center mb-3"> 
+                <div class="title_left text-center">Новая категория</div>
+            </div>
+            <div class="row d-flex justify-content-center mb-3">
+                <label for="formGroupExampleInput" class="form-label text_roboto">Название</label>
+                <input type="text"  class=" col-6 form-control mx-2" id="formGroupExampleInput" placeholder="" name="title">
+            </div>
+            <fieldset class="row mb-3 flex flex-wrap justify-content-center">
+                <legend class=" row col-form-label text_roboto">Цвет</legend>
+                <div class="row justify-content-between">
+                  <div class="col-1 form-check ">
+                    <input class="form-check-input color1" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                  </div>
+                  <div class="col-1 form-check">
+                    <input class="form-check-input color2" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  </div>
+                  <div class="col-1 form-check">
+                    <input class="form-check-input color3" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                  </div>
+                  <div class="col-1 form-check">
+                    <input class="form-check-input color4" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+                  </div>
+                  <div class="col-1 form-check">
+                    <input class="form-check-input color5" type="radio" name="gridRadios" id="gridRadios5" value="option5">
+                  </div>
+                  <div class="col-1 form-check">
+                   <input class="form-check-input color6" type="radio" name="gridRadios" id="gridRadios6" value="option6">
+                  </div>
+                  <div class="col-1 form-check">
+                    <input class="form-check-input color7" type="radio" name="gridRadios" id="gridRadios7" value="option7">
+                  </div>
+                  <div class="col-1 form-check">
+                    <input class="form-check-input color8" type="radio" name="gridRadios" id="gridRadios8" value="option8">
+                  </div>
+                </div>
+            </fieldset>
+                <div class="row mb-3">
+                <div class="col-sm-10 mx-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1" name = 'push'>
+                            <label class="form-check-label text_roboto" for="gridCheck1">
+                                Уведомления по умолчанию
+                            </label>
+                    </div>
+                </div>
+             </div>
+            <div class="col-12">
+                <button type="submit" class="btn  btn-outline-dark text_roboto">Создать</button>
+            </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class = " d-none d-lg-block col-lg-6 d3 h-100 px-3">
+        <div class = "h-100 w - 100 right_info ">категории которые уже существуют</div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block add_scripts %}
+{% load static %}
+{% endblock %}

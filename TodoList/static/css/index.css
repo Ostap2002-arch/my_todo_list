@@ -1,0 +1,217 @@
+:root {
+    --color1:#FFA018;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+/* Header */
+header {
+    min-height: 50px;
+}
+header .container {
+    padding-top: 16px;
+}
+
+/* LOGO */
+
+.logo {
+    padding: 5px;
+    font-size: 36px;
+}
+
+.name_logo {
+    font-family: "Roboto";
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.menu_item {
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    font-style: italic;
+    vertical-align:middle;
+    height: 35px;
+    z-index: 100;
+    transition: color .2s linear, border .2s linear;
+    padding: 0 10px;
+}
+
+.menu_item:hover {
+    color: #FFA018;
+}
+
+.enter_menu {
+    display: inline-block;
+    margin: auto 10px;
+}
+
+
+.header_nav div:last-of-type{
+    border-left: 3px solid #000;
+}
+
+.header_nav div:last-of-type:hover{
+    border-color: #FFA018;
+}
+
+.burger_menu {
+    font-size: 35px;
+    transition: color .2s linear;
+}
+
+.login {
+    margin-left: 12px;
+}
+
+.burger_menu:hover {
+    color: #FFA018;
+}
+
+
+/* Collaps */
+
+.collaps {
+    position: absolute;
+    width: 100%;
+    margin-top: -16px;
+    background: rgba(204, 204, 204, 0.5);
+}
+.wrapper {
+    height: 100vh;
+}
+.collapse_menu {
+    padding: 15px 5px 5px 5px;
+    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 4px solid #000;
+    border-left: 4px solid #000;
+    border-right: 4px solid #000;
+}
+
+.item_collaps {
+    margin: 8px 15px;
+    color: #808080;
+    vertical-align: middle;
+    
+}
+
+.item_scroll:before {
+    display: inline-block;
+    height: 80%;
+    width: 4px;
+    content: "";
+    background: #808080;
+    margin: -2px 5px -7px 0;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 45px;
+    width: 100%;
+    color: var(--bs-white);
+    font-size: 22px;
+    font-weight: 400;
+    background: #000;
+    text-align: center;
+    display: block;
+}
+
+.footer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* login */
+
+
+.login_reg {
+    margin-left: 3px;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 600; 
+}
+
+.form-check-input:checked {
+    background-color: #FFA018;
+    border-color: #FFA018;
+}
+
+.form-check-input:focus {
+  border-color: #FFA018;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(255, 160, 24, 0.25);
+}
+.form-check-input:checked {
+  background-color: #FFA018;
+  border-color: #FFA018;
+}
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #FFA018;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(255, 160, 24, 0.25);
+}
+
+.help_password {
+    color: var(--color1)
+}
+
+.enter {
+    font-family: "Roboto";
+    font-size: 17px;
+    font-weight: 600;
+    margin: auto;
+}
+.enter_btn {
+    border-width: 3px;
+}
+
+.btn-dark {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #212529;
+  --bs-btn-border-color: #212529;
+  --bs-btn-hover-color: #212529;
+  --bs-btn-hover-bg: #FFA018;
+  --bs-btn-hover-border-color: #212529;
+  --bs-btn-focus-shadow-rgb: 66, 70, 73;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #4d5154;
+  --bs-btn-active-border-color: #373b3e;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #212529;
+  --bs-btn-disabled-border-color: #212529;
+}
+
+.btn-outline-dark {
+  --bs-btn-color: #212529;
+  --bs-btn-border-color: #212529;
+  --bs-btn-hover-color: #212529;
+  --bs-btn-hover-bg: #FFA018;
+  --bs-btn-hover-border-color: #212529;
+  --bs-btn-focus-shadow-rgb: 33, 37, 41;
+  --bs-btn-active-color: #212529;
+  --bs-btn-active-bg: #FFA018;
+  --bs-btn-active-border-color: #212529;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #212529;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #212529;
+  --bs-gradient: none;
+}

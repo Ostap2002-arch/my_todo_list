@@ -1,0 +1,18 @@
+header {
+    position: fixed;
+    top: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+body {
+    overflow-y: visible;
+}
+
+.all_categories_content {
+    padding-top: 58px;
+    padding-bottom: 48px;
+}

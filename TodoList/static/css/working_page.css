@@ -1,0 +1,374 @@
+/* Header */
+body {
+    height: 80vh;
+    overflow-y: hidden;
+}
+
+header {
+
+    z-index: 2;
+    width: 100%;
+    height: 8vh;
+    background: #000;
+}
+
+/* LOGO */
+
+.logo {
+    padding: 5px;
+    font-size: 5vh;
+    color: #fff;
+}
+
+.name_logo {
+    font-family: "Roboto";
+    font-size: 5vh;
+    font-style: italic;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+
+
+
+
+
+/* Offcanvas */
+button {
+    transition: visibility .1s linear;
+}
+.hr_offcanvas {
+    opacity: 0.5;
+    size: 10px;
+    height: 1px;
+    background: #000;
+    border: none;
+    transform: rotate(0.2deg);
+}
+.button_canvas_user {
+    position: absolute;
+    left: 235px;
+    top: 25px;
+    z-index: 3000;
+    width: 107px;
+    visibility: visible;
+    display: inline-block;
+    top: 70px;
+    background: #68F268; 
+    color: #000;
+    --bs-btn-active-color: #fff; 
+    --bs-btn-active-bg: #68B568; 
+    clip-path: url("#bookmark");
+    border:none;
+    text-align: right;
+}
+
+
+.button_canvas_user:hover {
+    background: #68B568;
+    border: none;
+}
+
+.button_canvas_tasks {
+    position: absolute;
+    left: 235px;
+    width: 107px;
+    visibility: visible;
+    background: #FFAF6E;
+    display: inline-block;
+    top: 120px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    color: #000;
+    --bs-btn-active-color: #fff; 
+    --bs-btn-active-bg: #BF936D;
+    border: none;
+    clip-path: url("#bookmark");
+    text-align: right;
+}
+
+.button_canvas_tasks:hover {
+    background: #BF936D;
+    border: none;
+}
+
+.button_canvas_team {
+    position: absolute;
+    left: 235px;
+    width: 107px;
+    visibility: visible;
+    background: #F268B6;
+    display: inline-block;
+    top: 170px;
+    color: #000;
+    --bs-btn-active-color: #fff; 
+    --bs-btn-active-bg: #B66894; 
+    border: none;
+    clip-path: url("#bookmark");
+    text-align: right;
+}
+
+.button_canvas_team:hover {
+    background: #B66894;
+    border: none;
+}
+
+.offcanvas.hiding, .offcanvas.show, .offcanvas.showing {
+    z-index: 2000;
+}
+
+.offcanvas-backdrop {
+    top: 8vh;
+    height: 86vh;
+}
+
+
+
+.offcanvas.offcanvas-start {
+    top: 8vh;
+    width: 300px;
+    height: 86vh;
+    background: url(../img/5c16e1f5384e1f37007df0db.jpg
+    )
+}
+
+.offcanvas-header{
+    padding-left: 43px;
+}
+.photo_user {
+    height: 31px;
+    width: 31px;
+    color: #fff;
+    background: red;
+    border: 2px solid #000;
+    border-radius: 22%;
+    margin-right: 10px;
+    text-align: center;
+    font-family: "Roboto";
+    padding: -2px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    color: #fff;
+}
+.organizer {
+    height: 100%;
+    width: 100%;
+}
+
+.elem_organizer{
+    display: block;
+    clip-path: url("#marker");
+    padding: 0 20px;
+    transition: background .3s linear;
+    margin-left: 10px;
+    font-family: "Caveat";
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.elem_organizer:hover {
+    background: #FFFF73;
+}
+
+/* BASE */
+.hader_my_list {
+    border-bottom: 3px solid #000;
+}
+
+.date {
+    font-family: "Roboto";
+    font-size: clamp(1.25rem, 1.116rem + 0.63vw, 1.875rem);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.today {
+    font-family: "Roboto";
+    font-size: clamp(1.25rem, 1.116rem + 0.63vw, 1.875rem);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.task {
+    z-index: 5;
+    transition: border .2s linear;
+    border-radius: 10px;
+}
+.task : hover {
+    border: 2px solid #000;
+}
+.indent {
+    padding-left: 40px;
+    font-size: clamp(0.875rem, 0.826rem + 0.23vw, 1rem);
+}
+.flag {
+    position: absolute;
+    left: 10px;
+    top:4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FFCA80;
+    border: 2px solid #FF9F18;
+    color: transparent;
+    font-size: 31px;
+}
+
+.flag:hover{
+    color: #FF9F18;
+}
+
+.check {
+    position: absolute;
+    top: -15px;
+    left: -7px;
+}
+
+.about {
+    top: 3px;
+    right: 3px;
+    border: 3px #FF9F18 solid;
+    background: #fff;
+    color: #000;
+}
+
+.Three_dots_vertical {
+    top: -8px;
+    left: 0px;
+}
+.description {
+    text-overflow: ellipsis;
+    width: 80%;
+    white-space: nowrap;
+    overflow:hidden;
+    font-size: clamp(0.875rem, 0.826rem + 0.23vw, 1rem);
+    color: #999;
+}
+
+.data_event{
+    white-space: nowrap;
+    font-size: clamp(0.75rem, 0.701rem + 0.23vw, 0.875rem);
+    color: red;
+}
+.categories {
+    text-overflow: ellipsis;
+    width: %;
+    white-space: nowrap;
+    overflow:hidden;
+    color: #999;
+    font-size: clamp(0.75rem, 0.701rem + 0.23vw, 0.875rem);
+}
+.categorie{
+    text-decoration: none;
+    color: #999;
+    transition: color .2s linear;
+}
+.categorie:hover{
+    color: #000;
+}
+/* Modal */
+
+.modal-dialog {
+    height: 80%;
+}
+
+.priority1 {
+    color: #999;
+}
+
+
+.form-check-input1:focus {
+  border-color: #999;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(153, 153, 153, 0.25);
+}
+.form-check-input1:checked {
+    background-color: #999;
+    border-color: #999;
+}
+
+.priority2 {
+    color: #2D28B2;
+}
+
+.form-check-input2:focus {
+  border-color: #2D28B2;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(45, 40, 178, 0.25);
+}
+.form-check-input2:checked {
+    background-color: #2D28B2;
+    border-color: #2D28B2;
+}
+
+.priority3 {
+    color: #FF9F18;
+}
+
+.form-check-input3:focus {
+  border-color: #FF9F18;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(255, 159, 24, 0.25);
+}
+.form-check-input3:checked {
+    background-color: #FF9F18;
+    border-color: #FF9F18;
+}
+
+.priority4 {
+    color: #FF1E18;
+}
+
+.form-check-input4:focus {
+  border-color: #FF1E18;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(255, 30, 24, 0.25);
+}
+.form-check-input4:checked {
+    background-color: #FF1E18;
+    border-color: #FF1E18;
+}
+
+.fonts_modal {
+    font-family: "Caveat";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.bg_gray {
+    background: #ccc;
+}
+
+.modal-header {
+    background: url(../img/header_modal.jpg) top no-repeat;
+    background-size: cover;
+}
+
+.modal-footer {
+    border-top: 1px dotted 
+}
+
+/* Modal */
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 6vh;
+    width: 100%;
+    color: var(--bs-white);
+    font-size: 22px;
+    font-weight: 400;
+    background: #000;
+    text-align: center;
+    display: block;
+}
+
+.footer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

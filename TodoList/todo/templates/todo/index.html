@@ -1,0 +1,34 @@
+{% extends 'working_page.html' %}
+
+
+{% block content %}
+<div class = "col-lg-8 col-10  mt-4 ps-sm-1 ps-4">
+            <div class = "d-flex justify-content-between hader_my_list mb-2">
+                <div class = "today">Сегодня</div>
+                <div class = "date">{{ date_today }}</div>
+            </div>
+            <div  class = "border d-block task p-1 position-relative">
+                <button type = "button" class = "btn position-absolute btn-warning btn-sm about " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-three-dots-vertical"></i></button>
+                <div class = "container-fluid">
+                    <div class = "row">
+                        <div class = "col text-start position-relative indent"><div class = "flag"><div class = "position-relative"><i class="bi bi-check p-0 m-0 check"></i></div></div> Задача №1</div>
+                    </div>
+                    <div class = "row mb-2">
+                        <div class = "col-8 description indent">
+                            Тут будет описание оооооооооооооооооооооооооооооочччччччччччччччеееееееееееннннннннннннньььььььь длинноое описание
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col-4 d-sm-inline-block d-none  text-start data_event indent">
+                            <i class="bi bi-calendar3-event"></i> 20 мая
+                        </div>
+                        <div class = "col-8 d-sm-inline-block d-none text-end categories">
+                            <a class = "categorie" href = "#">Категория1</a>/
+                            <a class = "categorie" href = "#">Категория1</a>/
+                            <a class = "categorie" href = "#">Категория1</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
