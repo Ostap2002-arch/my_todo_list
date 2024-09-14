@@ -16,3 +16,12 @@ body {
     padding-top: 58px;
     padding-bottom: 48px;
 }
+
+.link_if_size {
+    display: none;
+}
+@media screen and (width < 992px){
+    .link_if_size{
+        display: block;
+    }
+}

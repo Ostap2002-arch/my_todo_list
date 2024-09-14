@@ -58,13 +58,16 @@
   <div class="offcanvas-body">
     <div class = "div_organizer d-inline-block">
             <div class = "d-inline-block organizer">
-                
+                <a href="#" class = "not_decoration">
                 <div class = "elem_organizer d-block my-1">
-                    <i class="bi bi-plus-circle"></i> Добавить задачу
+                    <i class="bi bi-person-fill"></i>Профиль
                 </div>
+                </a>
+                <a href="#" class = "not_decoration">
                 <div class = "elem_organizer d-block my-1">
-                    <i class="bi bi-calendar-check"></i> Календарь
+                    <i class="bi bi-gear-fill"></i>Настройки
                 </div>
+                </a>
             </div>
     </div>
   </div>
@@ -79,7 +82,7 @@
     <button type="button"  class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_tasks"></button>
     <!-- Button offcanvas tasks-->   
       <button class="btn btn-primary button_canvas_tasks" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_tasks" aria-controls="offcanvasExample">
-        <i class="bi bi-calendar-check"></i>
+        <i class="bi bi-list-task"></i>
       </button>
       <!-- END Button offcanvas tasks-->   
   </div>
@@ -87,16 +90,26 @@
   <div class="offcanvas-body">
     <div class = "div_organizer d-inline-block">
             <div class = "d-inline-block organizer">
-                
+                <a href="#" class = "not_decoration">
                 <div class = "elem_organizer d-block my-1">
-                    <i class="bi bi-plus-circle"></i> Мой профиль
+                    <i class="bi bi-calendar-check"></i> Задачи на сегодня
                 </div>
+                </a>
+                <a href="#" class = "not_decoration">
                 <div class = "elem_organizer d-block my-1">
-                    <i class="bi bi-calendar-check"></i> Контакты
+                    <i class="bi bi-bookmark-fill"></i> Задачи по категориям
                 </div>
+                </a>
+                <a href="#" class = "not_decoration">
+                <div class = "elem_organizer d-block my-1">
+                    <i class="bi bi-calendar-week"></i> Календарь
+                </div>
+                </a>
+<!--
                 <div class = "elem_organizer d-block my-1">
                     <i class="bi bi-gear"></i> Настройки
                 </div>
+-->
             </div>
     </div>
   </div>
@@ -111,7 +124,7 @@
     <button type="button"  class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"></button>
     <!-- Button offcanvas team-->   
       <button class="btn btn-primary button_canvas_team" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_team" aria-controls="offcanvasExample">
-    <i class="bi bi-people"></i>
+    <i class="bi bi-bookmark-fill"></i>
       </button>
     <!-- END Button offcanvas team-->  
   </div>
@@ -119,16 +132,21 @@
   <div class="offcanvas-body">
     <div class = "div_organizer d-inline-block">
             <div class = "d-inline-block organizer">
-                
+                <a href="#" class = "not_decoration">
                 <div class = "elem_organizer d-block my-1">
-                    <i class="bi bi-plus-circle"></i> Добавить проект
+                    <i class="bi bi-bookmark"></i>Категории
                 </div>
+                </a>
+                <a href="{% url 'create_categories'%}" class = "not_decoration">
                 <div class = "elem_organizer d-block my-1">
-                    <i class="bi bi-calendar-check"></i> Календарь проектов
+                    <i class="bi bi-bookmark-plus"></i>Создать категорию
                 </div>
+                </a>
+<!--
                 <div class = "elem_organizer d-block my-1">
                     <i class="bi bi-gear"></i> Сотрудники
                 </div>
+-->
             </div>
     </div>
   </div>

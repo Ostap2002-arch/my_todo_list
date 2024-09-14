@@ -171,7 +171,10 @@ button {
 .elem_organizer:hover {
     background: #FFFF73;
 }
-
+.not_decoration {
+    text-decoration: none;
+    color: #000;
+}
 /* BASE */
 .hader_my_list {
     border-bottom: 3px solid #000;

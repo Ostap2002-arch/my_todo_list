@@ -202,7 +202,7 @@ input.#id_color_0:checked{
     clip-path: url("#marker");
     background: #FFFF73;
     display: inline-block;
-    width: 200px;
+    width: auto;
 }
 
 .text_roboto{
@@ -222,6 +222,7 @@ input.#id_color_0:checked{
     }
 
 }
+
 
 /*
 #id_color_1.form-check-input {

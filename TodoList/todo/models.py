@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 
 class Works(models.Model):
@@ -23,6 +23,9 @@ class Сategories(models.Model):
     push = models.BooleanField(verbose_name='Уведомления', null=True)
     color = models.ForeignKey('Color', verbose_name='ц  вет', on_delete=models.SET_NULL , default=None, null=True)
     date_creat = models.DateTimeField('Дата создания', auto_now_add=True)
+
+    def get_absolute_url(self):
+        return reverse('create_and_show_tasks', kwargs={'slug_categories':self.slug})
 
 class Color(models.Model):
     title = models.CharField('Название цвета', max_length=255)
