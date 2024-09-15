@@ -24,6 +24,7 @@ body {
 .right_info {
     background-color: #e4eded;
     border-radius: 28px;
+    min-height: 83vh;
 }
 
 
@@ -395,6 +396,7 @@ input#id_color_7:focus{
 .all_categories{
     border: 2px dashed #000;
     background: #b7b7b7;
+    transition: background 0.5s linear;
 }
 
 .all_categories:hover{

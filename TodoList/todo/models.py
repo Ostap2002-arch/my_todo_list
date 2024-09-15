@@ -15,6 +15,8 @@ class Works(models.Model):
     fileds = models.FileField('Дополнительный материал', upload_to='users/%Y/%m/%d')
     owner = models.ForeignKey('users.User' , verbose_name='Мои задачи', on_delete=models.CASCADE, default=None)
     categories = models.ForeignKey('Сategories' , verbose_name='Мои задачи', on_delete=models.CASCADE, default=None)
+    date_tasks = models.DateTimeField('Дата события', null=True, blank=True)
+    to_warn = models.DateTimeField('Предупредить за', null = True, blank=True)
 
 class Сategories(models.Model):
     title = models.CharField('Категория', max_length=255)

@@ -1,0 +1,107 @@
+.task {
+    background-color: #fff;
+}
+
+.data_event_top{
+    display: none;
+    font-size: clamp(0.875rem, 0.826rem + 0.23vw, 1rem);
+}
+
+
+@media screen and (width < 992px){
+    .data_event_top{
+        display: block;
+    }
+}
+
+.not_style_a {
+    text-decoration-color: none;
+    text-decoration: none;
+    color: #000;
+}
+
+/*Смотри от сюда */
+
+
+body {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.d1 {
+    /*border: 2px solid red;*/
+    height: 86vh;
+}
+
+
+.left_form {
+    background-color: #e4eded;
+    border-radius: 28px;
+}
+
+.right_info {
+    background-color: #e4eded;
+    border-radius: 28px;
+    min-height: 83vh;
+}
+
+
+  
+
+.title_left{
+    font-size: 30px;
+    font-family: "Caveat";
+    clip-path: url("#marker");
+    background: #FFFF73;
+    display: inline-block;
+    width: auto;
+}
+
+.text_roboto{
+    font-family: "Roboto";
+    font-style: italic;
+}
+
+@media screen and (max-width: 576px){
+    .button_canvas_user {
+        top: 370px;
+    }
+    .button_canvas_tasks{
+        top: 420px;
+    }
+    .button_canvas_team{
+        top: 470px;
+    }
+
+}
+
+
+
+
+.category_user{
+/*    border: 2px solid #000;*/
+    border-radius: 5px;
+/*    background:rgba(108, 10, 171, 0.20);*/
+    transition: background 0.3s linear; 
+    border: 1px solid #000;
+}
+
+.category_user:hover{
+/*    background:rgba(108, 10, 171, 0.4);*/
+}
+
+.text_category{
+    font-size: 30px;
+    font-family: "Caveat";
+}
+
+.all_categories{
+    border: 2px dashed #000;
+    background: #fff;
+    transition: background 0.5s linear;
+}
+
+.all_categories:hover{
+    background: #989898
+}
+

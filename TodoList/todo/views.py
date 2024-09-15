@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from slugify import slugify
 
-from .forms import FormCreateCategories
+from .forms import FormCreateCategories, FormCreateTask
 from .models import Color, Сategories, Works
 
 
@@ -35,11 +35,14 @@ def show_all_categories(request, slug_categories):
                                                                  })
 def create_and_show_tasks(request, slug_categories):
     try:
+        print(request.POST)
         user = request.user
         category = Сategories.objects.get(owner=user, slug = slug_categories)
         list_tasks_categories = Works.objects.filter(owner = user, categories = category)
+        form = FormCreateTask()
         return render(request, 'todo/show_all_tasks_categories.html', {'works' : list_tasks_categories,
                                                                                             'category' : category,
+                                                                                            'form' : form,
                                                                                                 })
     except Exception as s:
         print(s)

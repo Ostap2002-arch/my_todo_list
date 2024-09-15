@@ -1,49 +1,123 @@
 {% extends 'working_page.html' %}
 {% block add_link %}
 {% load static %}
-<link href="{% static 'css/create_categories.css' %}" rel="stylesheet">
 <link href="{% static 'css/all_show_categories.css' %}" rel="stylesheet">
+<link href = "{% static 'css/show_all_tasks_categories.css' %}" rel="stylesheet">
+<!--Подключаем datepiker-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+<script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
 {% endblock %}
 
 {% block content %}
 <div class = "row w-100 py-1 gx-2 d1">
     <div class="col-12 h-auto d2 h-100 px-3 all_categories_content" >
-        <div class = "w-100 right_info py-3">
+        <div class = "w-100 right_info py-3 px-2">
             <div class = "d-flex justify-content-center mb-3">
-                <div class="title_left text-center px-4">{{ category.title }}</div>
+                <div class="title_left text-center px-4"
+                     style="background-color: {{ category.color.color }}"
+                >{{ category.title }}</div>
             </div>
-            <div  class = "border d-block task p-1 position-relative">
-                <button type = "button" class = "btn position-absolute btn-warning btn-sm about " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-three-dots-vertical"></i></button>
+            
+<!--creat task-->
+           <a type = "button" class = "d-block not_style_a mb-2 " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <div  class = "all_categories d-block task p-1 position-relative ">
+                <div class = "container-fluid p-0 m-0">
+                    <div class = "row d-flex justify-content-between flex-nowrap p-0 m-0">
+                    <p class = 'mb-0 text-center'><i class="bi bi-plus-circle me-2"></i>Создать задачу</p>
+                    </div>
+                </div>
+            </div>
+            </a>    
+<!--for computer -->
+            <div  class = "border d-none d-lg-block task p-1 position-relative mb-2">
                 <div class = "container-fluid">
-                    <div class = "row">
-                        <div class = "col text-start position-relative indent"><div class = "flag"><div class = "position-relative"><i class="bi bi-check p-0 m-0 check"></i></div></div> Задача №1</div>
+                    <div class = "row mb-2 d-flex justify-content-between flex-nowrap">
+                        <div class = "col-8 text-start position-relative indent px-1"> Задача №1</div>
+                        
+                        <button type = "button" class = "d-none d-lg-block col-4 btn position-absolute btn-warning btn-sm about " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-three-dots-vertical"></i></button>
+                        
+                        <div class = "col-4 w-auto data_event indent data_event_top">
+                            <i class="bi bi-calendar3-event"></i> 20 мая
+                        </div>
+                        
                     </div>
                     <div class = "row mb-2">
-                        <div class = "col-8 description indent">
+                        <div class = "col-12 description indent px-1">
                             Тут будет описание оооооооооооооооооооооооооооооочччччччччччччччеееееееееееннннннннннннньььььььь длинноое описание
                         </div>
                     </div>
                     <div class = "row">
-                        <div class = "col-4 d-sm-inline-block d-none  text-start data_event indent">
+                        <div class = "col-4 d-lg-inline-block d-none  text-start data_event indent px-1">
                             <i class="bi bi-calendar3-event"></i> 20 мая
-                        </div>
-                        <div class = "col-8 d-sm-inline-block d-none text-end categories">
-                            <a class = "categorie" href = "#">Категория1</a>/
-                            <a class = "categorie" href = "#">Категория1</a>/
-                            <a class = "categorie" href = "#">Категория1</a>
                         </div>
                     </div>
                 </div>
             </div>
+<!--            for iphone -->
+            <a type = "button" class = "d-block d-lg-none not_style_a mb-2 " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <div  class = "border d-block task p-1 position-relative">
+                <div class = "container-fluid">
+                    <div class = "row mb-2 d-flex justify-content-between flex-nowrap">
+                        <div class = "col-8 text-start position-relative indent px-1"> Задача №1</div>
+                        
+                        <button type = "button" class = "d-none d-lg-block col-4 btn position-absolute btn-warning btn-sm about " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-three-dots-vertical"></i></button>
+                        
+                        <div class = "col-4 w-auto data_event indent data_event_top">
+                            <i class="bi bi-calendar3-event"></i> 20 мая
+                        </div>
+                        
+                    </div>
+                    <div class = "row mb-2">
+                        <div class = "col-12 description indent px-1">
+                            Тут будет описание оооооооооооооооооооооооооооооочччччччччччччччеееееееееееннннннннннннньььььььь длинноое описание
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col-4 d-lg-inline-block d-none  text-start data_event indent px-1">
+                            <i class="bi bi-calendar3-event"></i> 20 мая
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </a>    
             {% if not list_tasks_categories %}
-            <p>Пока тут нет задач</p>
+            <div  class = "d-block p-1 position-relative ">
+                <div class = "container-fluid p-0 m-0">
+                    <div class = "row d-flex justify-content-between flex-nowrap p-0 m-0">
+                    <p class = 'mb-0 text-center'>Пока тут нет задач, но Вы всегда можете их добавить!</p>
+                    </div>
+                </div>
+            </div>
             {% endif %}
+<!--            тестовый вариант-->
+            <form method="post">
+            {% csrf_token %}
+             <div  class = "d-block p-1 position-relative ">
+                <div class = "container-fluid p-0 m-0">
+                    <div class = "row d-flex justify-content-between p-0 m-0">
+                        {{ form.as_p }}
+                        <input id="datepicker" width="276" name="date"/>
+                        <script>
+                            $('#datepicker').datepicker();
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            </form>
+<!--            тестовый вариант-->
         </div>
+
     </div>
 </div>
 
 {% endblock %}
 
 {% block add_scripts %}
+<script>
+        $('#datepicker').datepicker();
+</script>
 {% load static %}
 {% endblock %}
