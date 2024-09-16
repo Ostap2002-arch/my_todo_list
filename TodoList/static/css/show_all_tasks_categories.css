@@ -23,10 +23,6 @@
 /*Смотри от сюда */
 
 
-body {
-    height: 100vh;
-    overflow-y: hidden;
-}
 
 .d1 {
     /*border: 2px solid red;*/
@@ -104,4 +100,41 @@ body {
 .all_categories:hover{
     background: #989898
 }
+
+/*
+.gj-textbox-md {
+    border-bottom: none;
+    background-color: #fff;
+}
+*/
+
+
+#input_task, 
+#input_task1, 
+#input_task2
+{
+    
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.gj-datepicker-md [role=right-icon] {
+    display: none;
+}
+
 
