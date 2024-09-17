@@ -279,59 +279,72 @@ button {
     height: 80%;
 }
 
-.priority1 {
+.priority1, 
+#id_priority_0{
     color: #999;
 }
 
 
-.form-check-input1:focus {
+.form-check-input1:focus,
+#id_priority_0:focus{
   border-color: #999;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(153, 153, 153, 0.25);
 }
-.form-check-input1:checked {
+.form-check-input1:checked,
+#id_priority_0:checked{
     background-color: #999;
     border-color: #999;
 }
 
-.priority2 {
+.priority2,
+#id_priority_1{
     color: #2D28B2;
 }
 
-.form-check-input2:focus {
+.form-check-input2:focus,
+#id_priority_1:focus
+{
   border-color: #2D28B2;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(45, 40, 178, 0.25);
 }
-.form-check-input2:checked {
+.form-check-input2:checked,
+#id_priority_1:checked{
     background-color: #2D28B2;
     border-color: #2D28B2;
 }
 
-.priority3 {
+.priority3,
+#id_priority_2{
     color: #FF9F18;
 }
 
-.form-check-input3:focus {
+.form-check-input3:focus,
+#id_priority_2:focus{
   border-color: #FF9F18;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(255, 159, 24, 0.25);
 }
-.form-check-input3:checked {
+.form-check-input3:checked,
+#id_priority_2:checked{
     background-color: #FF9F18;
     border-color: #FF9F18;
 }
 
-.priority4 {
+.priority4,
+#id_priority_3{
     color: #FF1E18;
 }
 
-.form-check-input4:focus {
+.form-check-input4:focus,
+#id_priority_3:focus{
   border-color: #FF1E18;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(255, 30, 24, 0.25);
 }
-.form-check-input4:checked {
+.form-check-input4:checked,
+#id_priority_3:checked{
     background-color: #FF1E18;
     border-color: #FF1E18;
 }

@@ -1,4 +1,5 @@
 {% extends 'working_page.html' %}
+{% load working_with_a_date %}
 {% block add_link %}
 {% load static %}
 <!--Подключаем datepiker-->
@@ -21,7 +22,7 @@
                      style="background-color: {{ category.color.color }}"
                 >{{ category.title }}</div>
             </div>
-            
+          
 <!--creat task-->
            <a type = "button" class = "d-block not_style_a mb-2 " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <div  class = "all_categories d-block task p-1 position-relative ">
@@ -31,60 +32,63 @@
                     </div>
                 </div>
             </div>
-            </a>    
+            </a>
+
 <!--for computer -->
+            {% for task in works %}
             <div  class = "border d-none d-lg-block task p-1 position-relative mb-2">
                 <div class = "container-fluid">
                     <div class = "row mb-2 d-flex justify-content-between flex-nowrap">
-                        <div class = "col-8 text-start position-relative indent px-1"> Задача №1</div>
+                        <div class = "col-8 text-start position-relative indent px-1">{{ task.title|capfirst }}</div>
                         
-                        <button type = "button" class = "d-none d-lg-block col-4 btn position-absolute btn-warning btn-sm about " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-three-dots-vertical"></i></button>
+                        <button type = "button" class = "d-none d-lg-block col-4 btn position-absolute btn-warning btn-sm about " data-bs-toggle="modal" data-bs-target="#staticBackdrop{{forloop.counter}}"><i class="bi bi-three-dots-vertical"></i></button>
                         
                         <div class = "col-4 w-auto data_event indent data_event_top">
-                            <i class="bi bi-calendar3-event"></i> 20 мая
+                            <i class="bi bi-calendar3-event"></i> {% simpl_date task.date_tasks %}
                         </div>
                         
                     </div>
                     <div class = "row mb-2">
                         <div class = "col-12 description indent px-1">
-                            Тут будет описание оооооооооооооооооооооооооооооочччччччччччччччеееееееееееннннннннннннньььььььь длинноое описание
+                            {{ task.description|capfirst|truncatewords:10 }}
                         </div>
                     </div>
                     <div class = "row">
                         <div class = "col-4 d-lg-inline-block d-none  text-start data_event indent px-1">
-                            <i class="bi bi-calendar3-event"></i> 20 мая
+                            <i class="bi bi-calendar3-event"></i> {% simpl_date task.date_tasks %}
                         </div>
                     </div>
                 </div>
             </div>
 <!--            for iphone -->
-            <a type = "button" class = "d-block d-lg-none not_style_a mb-2 " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <a type = "button" class = "d-block d-lg-none not_style_a mb-2 " data-bs-toggle="modal" data-bs-target="#staticBackdrop{{forloop.counter}}">
             <div  class = "border d-block task p-1 position-relative">
                 <div class = "container-fluid">
                     <div class = "row mb-2 d-flex justify-content-between flex-nowrap">
-                        <div class = "col-8 text-start position-relative indent px-1"> Задача №1</div>
+                        <div class = "col-8 text-start position-relative indent px-1"> {{task.title|capfirst}}</div>
                         
-                        <button type = "button" class = "d-none d-lg-block col-4 btn position-absolute btn-warning btn-sm about " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-three-dots-vertical"></i></button>
+                        <button type = "button" class = "d-none d-lg-block col-4 btn position-absolute btn-warning btn-sm about " data-bs-toggle="modal" data-bs-target="#staticBackdrop{{forloop.counter}}"><i class="bi bi-three-dots-vertical"></i></button>
                         
                         <div class = "col-4 w-auto data_event indent data_event_top">
-                            <i class="bi bi-calendar3-event"></i> 20 мая
+                            <i class="bi bi-calendar3-event"></i> {% simpl_date task.date_tasks %}
                         </div>
                         
                     </div>
                     <div class = "row mb-2">
                         <div class = "col-12 description indent px-1">
-                            Тут будет описание оооооооооооооооооооооооооооооочччччччччччччччеееееееееееннннннннннннньььььььь длинноое описание
+                            {{task.description|capfirst|truncatewords:10}}
                         </div>
                     </div>
                     <div class = "row">
                         <div class = "col-4 d-lg-inline-block d-none  text-start data_event indent px-1">
-                            <i class="bi bi-calendar3-event"></i> 20 мая
+                            <i class="bi bi-calendar3-event"></i> {% simpl_date task.date_tasks %}
                         </div>
                     </div>
                 </div>
             </div>
-            </a>    
-            {% if not list_tasks_categories %}
+            </a>
+            {% endfor %}
+            {% if not works %}
             <div  class = "d-block p-1 position-relative ">
                 <div class = "container-fluid p-0 m-0">
                     <div class = "row d-flex justify-content-between flex-nowrap p-0 m-0">
@@ -93,50 +97,28 @@
                 </div>
             </div>
             {% endif %}
-            
-            
-<!--
-            <div class="form-check form-check-inline">
-                  <input class="form-check-input form-check-input2" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                  <label class="form-check-label" for="inlineRadio2"><i class="bi bi-flag-fill priority2"></i></label>
+        </div>
+    </div>
+</div>
+<!--Модальные окна -->
+
+<!-- Модальное окно создания задачи-->
+<form method="post" enctype="multipart/form-data" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+    <div class="modal-content h-100">
+      <div class="modal-header bg_gray">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body container-fluid">
+          <div class = "d-flex justify-content-center mb-3">
+                <div class="title_left text-center px-4 mb-2"
+                     style="background-color: {{ category.color.color }}"
+                >Новая задача</div>
             </div>
-            
--->
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-<!--            тестовый вариант-->
-            <form method="post">
-            {% csrf_token %}
-             <div  class = "d-block p-1 position-relative ">
+            <div  class = "d-block p-1 position-relative ">
                 <div class = "container-fluid p-0 m-0">
                     <div class = "row d-flex justify-content-between p-0 m-0">
+                        {% csrf_token %}
                         {% for f in form %}
                         {% if f.label == "Дата события" %}
                         <div class="mb-3">
@@ -164,11 +146,14 @@
                         </div>
                         {% elif  f.label == "Приоритет" %}
                             <div class = "mb-2 fonts_modal">Приоритетность</div>
-                            {% for pr in form.priority %}
                             <div class = "d-flex flex-nowrap justify-content-around mb-3">
-                                <p>{{ pr.value }}</p>
-                            </div>
+                            {% for pr in form.priority %}
+                                <div>
+                                {{ pr.tag }}
+                                <label class="form-check-label" for="id_priority_{{forloop.counter0}}"><i class="bi bi-flag-fill priority{{forloop.counter}}"></i></label>
+                                </div>
                             {% endfor %}
+                            </div>
                         {% else %}
                         <div class="mb-3">
                             <label class = "form-label fonts_modal" for = "{{ f.id_for_label }}">{{ f.label }}</label>
@@ -177,30 +162,120 @@
                         </div>
                         {% endif  %}
                         {% endfor %}
-                        {% for pr in form.priority %}
-                        <p>{{for}}</p>
-                        {% endfor %}
-<!--                        datetime picker-->
-<!--
-                        <div class="input-group mb-3 flex-nowrap">
-                          <input id="input_task" width="312" aria-describedby="basic-addon">
-                            <span class="input-group-text width-auto" id="basic-addon"><i class="bi bi-calendar-week"></i></span>
-                        </div>
-                            <script>
-                                $('#input_task').datetimepicker({ footer: true, modal: true });
-                            </script>
--->
                     </div>
                  </div>
                 </div>
-
-            <button type="submit" class="btn btn-primary">Сохранить</button>
-            </form>
-<!--            тестовый вариант-->
-        </div>
-
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+      </div>
     </div>
-</div>
+  </div>
+</form>
+
+<!-- Create form to task -->
+{% for old_form_task in list_forms %}
+<form method="post" enctype="multipart/form-data" class="modal fade" id="staticBackdrop{{forloop.counter}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+    <div class="modal-content h-100">
+      <div class="modal-header bg_gray">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body container-fluid">
+          <div class = "d-flex justify-content-center mb-3">
+                <div class="title_left text-center px-4 mb-2"
+                     style="background-color: {{ category.color.color }}"
+                >{{task.title|capfirst}}</div>
+            </div>
+            <div  class = "d-block p-1 position-relative ">
+                <div class = "container-fluid p-0 m-0">
+                    <div class = "row d-flex justify-content-between p-0 m-0">
+                        {% csrf_token %}
+                        {% for f in old_form_task %}
+                        {% if f.label == "Дата события" %}
+                        <div class="mb-3">
+                            <label class = "form-label fonts_modal" for = "{{ f.id_for_label }}">{{ f.label }}</label>
+                            <div class="input-group flex-nowrap">
+                                {{f}}
+                            <span class="input-group-text width-auto" id="basic-addon1"><i class="bi bi-calendar-week"></i></span>
+                            <script>
+                                $('#input_task1').datetimepicker({ footer: true, modal: true });
+                            </script>
+                            </div>
+                            <div class="form-error">{{ f.errors }}</div>
+                        </div>
+                        {% elif f.label == "Отправить уведомление" %}
+                        <div class="mb-3">
+                            <label class = "form-label fonts_modal" for = "{{ f.id_for_label }}">{{ f.label }}</label>
+                            <div class="input-group flex-nowrap">
+                            {{ f }}
+                            <span class="input-group-text width-auto" id="basic-addon1"><i class="bi bi-calendar-week"></i></span>
+                            <script>
+                                $('#input_task2').datetimepicker({ footer: true, modal: true });
+                            </script>
+                            </div>
+                            <div class="form-error">{{ f.errors }}</div>
+                        </div>
+                        {% elif  f.label == "Приоритет" %}
+                            <div class = "mb-2 fonts_modal">Приоритетность</div>
+                            <div class = "d-flex flex-nowrap justify-content-around mb-3">
+                            {% for pr in form.priority %}
+                                <div>
+                                {{ pr.tag }}
+                                <label class="form-check-label" for="id_priority_{{forloop.counter0}}"><i class="bi bi-flag-fill priority{{forloop.counter}}"></i></label>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        {% else %}
+                        <div class="mb-3">
+                            <label class = "form-label fonts_modal" for = "{{ f.id_for_label }}">{{ f.label }}</label>
+                            {{ f }}
+                            <div class="form-error">{{ f.errors }}</div>
+                        </div>
+                        {% endif  %}
+                        {% endfor %}
+                    </div>
+                 </div>
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endfor %}
+<!-- End create form to task -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% endblock %}
 

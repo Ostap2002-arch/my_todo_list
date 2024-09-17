@@ -4,6 +4,7 @@ from django.urls import reverse
 
 class Works(models.Model):
     title = models.CharField('Краткое название', max_length=255)
+    slug = models.SlugField('Слаг', max_length=255, null=True, blank=True, unique=True)
     description = models.TextField('Описание')
     priority = models.ForeignKey('Priority', null=True, blank=True, verbose_name='Приоритет', on_delete=models.CASCADE)
     fileds = models.FileField('Дополнительный материал', upload_to='users/%Y/%m/%d')
@@ -31,4 +32,9 @@ class Color(models.Model):
 
 class Priority(models.Model):
     title = models.IntegerField('Номер приоритета')
+
+
+class FilesTask(models.Model):
+    file = models.FileField('Файлы к задаче')
+    task = models.ForeignKey('Works', on_delete=models.CASCADE)
 
